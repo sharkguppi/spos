@@ -18,11 +18,25 @@ extern "C" JNIEXPORT void JNICALL Java_sample_shoutout(JNIEnv *env, jobject obj)
 
 
 
-
-
-
-
 /*
+
+g++ -fPIC -I$JAVA_HOME/include -I$JAVA_HOME/include/linux \
+    -shared -o libnew.so new.cpp
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+
+javac -h . sample.java
+
+
+g++ -fPIC -I"$JAVA_HOME/include" -I"$JAVA_HOME/include/linux" \
+    -shared -o libnew.so new.cpp
+
+java sample
+
+
+
 # 0) Install JDK and C++ toolchain
 sudo apt update
 sudo apt install -y openjdk-21-jdk build-essential
