@@ -1,0 +1,18 @@
+ALA for Macro: DEFINE
+DEFINE 
+
+Expanded Code: DEFINE
+0 &XYZ ,,,&X,&Y,&OP
+0 MOVER ,,AREG,&X
+0 &OP AREG,&Y
+0 MOVEM ,,AREG,&X
+0 MEND
+ALA for Macro: COMPUTE
+COMPUTE X,Y
+X
+Y
+Expanded Code: COMPUTE
+0 MOVEM ,,BREG,TMP
+0 INCRM ,,X,Y,BREG
+0 MOVER ,,BREG,TMP
+ALA

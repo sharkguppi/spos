@@ -1,0 +1,8 @@
+Remove-Item -ErrorAction SilentlyContinue IC.txt, SYMTAB.txt, LITTAB.txt, POOLTAB.txt, PASS2.txt
+Get-ChildItem -Filter *.class | Remove-Item -ErrorAction SilentlyContinue
+
+javac *.java
+
+java Pass1asm
+
+java Pass2asm
